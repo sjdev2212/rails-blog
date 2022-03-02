@@ -1,24 +1,76 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Rails/Blog
 
-Things you may want to cover:
+> ROR app to create posts.
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## Built With
 
-* Database creation
+- Major languages: Ruby
+- Frameworks: ROR
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running follow these simple example steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prerequisites
 
-* Deployment instructions
+You need to have followings installed in your local machine:
+- `Ruby`
+- `Postgresql`
+- `Rails`
+- `RSpec`
+- `node.js`
 
-* ...
+### Setup
+
+To setup the Items Library project in your local, in the repo page: 
+- click on code (dropdown list) > Download as ZIP. 
+- or open terminal of path you want to install project and run this command:
+`git clone https://github.com/sj1978/rails-blog.git
+- `cd rails-blogmania-app/`
+- `bundle install`
+- `bin/rails db:create`
+- `bin/rails db:migrate`
+- `rails c`
+- `**In the console**`
+
+
+## Instruction on the usage
+- Run the following comands in your command line:
+- `rails s`
+
+## Tests
+- To run tests for current app, please run below commands in your terminal:
+- `cd ruby-items-library`
+- `rspec spec spec/test_file_name`
+
+## Author
+
+
+👤 **Anibal Amoroso**
+
+- GitHub: [sj1978](https://github.com/sj1978)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/anibalamoroso/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Hope1226/ruby-items-library/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
