@@ -32,10 +32,7 @@ To setup the Items Library project in your local, in the repo page:
 `git clone https://github.com/sj1978/rails-blog.git
 - `cd rails-blogmania-app/`
 - `bundle install`
-- `bin/rails db:create`
-- `bin/rails db:migrate`
-- `rails c`
-- `**In the console**`
+
 
 
 ## Instruction on the usage
@@ -44,8 +41,8 @@ To setup the Items Library project in your local, in the repo page:
 
 ## Tests
 - To run tests for current app, please run below commands in your terminal:
-- `cd ruby-items-library`
-- `rspec spec spec/test_file_name`
+- `cd rails-blog`
+- `rake`
 
 ## Author
 
