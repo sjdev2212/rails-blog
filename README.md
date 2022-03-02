@@ -59,7 +59,7 @@ To setup the Items Library project in your local, in the repo page:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Hope1226/ruby-items-library/issues).
+Feel free to check the [issues page](https://github.com/sj1978/rails-blog/issues).
 
 ## Show your support
 
