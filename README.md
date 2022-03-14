@@ -1,9 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Rails/Blog
+# ROR: Rails-blog
 
 > ROR app to create posts.
-
 
 
 ## Built With
@@ -27,13 +26,19 @@ You need to have followings installed in your local machine:
 ### Setup
 
 To setup the Items Library project in your local, in the repo page: 
-- click on code (dropdown list) > Download as ZIP. 
-- or open terminal of path you want to install project and run this command:
-`git clone https://github.com/sj1978/rails-blog.git
-- `cd rails-blogmania-app/`
+
+`git clone https://github.com/sj1978/rails-blog.git`
+- `cd rails-blog`
 - `bundle install`
+- `bin/rails db:create`
+- `bin/rails db:migrate`
+- `rails c`
+- `**In the console**`
+```RUBY
+  first_user = User.create(name: 'Anna', photo: 'https://randomuser.me/api/portraits/women/52.jpg', bio: 'Teacher from Denmark.')
 
-
+```
+- `exit`
 
 ## Instruction on the usage
 - Run the following comands in your command line:
