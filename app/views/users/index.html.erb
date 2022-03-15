@@ -1,2 +1,22 @@
+<div class="d-flex  align-items-center justify-content-center m-3">
+<h1>Rails blog</h1>
+</div>
+<main >
+<% @users.each do |user| %> 
+<div class="row border border-1">
+<div class="col ">
+<div class="mb-1 ms-3  "><%=  image_tag (user.photo),height: 200 ,width: 150 %></div>
+</div>
+<div class="col">
+     <%= link_to (user.name),user_path(user.id), class:"fs-2"%>
+     
+        <div class="fs-4">Number of posts: <%= user.posts_counter%></div>
+</div>
+</div>
+</main>
 
-<h1>All users</h1>
+
+
+ 
+
+<%end%>
