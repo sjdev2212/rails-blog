@@ -12,7 +12,7 @@
 
 
     
-    <%=@posts.each do |post|%>
+    <%@posts.each do |post|%>
     <div class=" row border border-1 mt-2">
     <p>Post#  <%=post.id%> 
      <%= link_to post.title,"/users/#{@user.id}/posts/#{post.id}"%>
