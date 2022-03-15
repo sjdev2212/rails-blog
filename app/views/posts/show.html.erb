@@ -1,3 +1,17 @@
-<h1>Show One post</h1>
-<p>User ID: <%= @user_id %></p>
-<p>Post ID: <%= @post_id %></p>
+
+ <main class=" row border border-1 mt-2">
+ <div class="col likes">
+    <h1 ><%= @post.title %>  by:<%=@post.author.name%></h1>
+    <p class="corner" ><%= "Comments: #{@post.comments_counter || 0}, Likes: #{@post.likes_counter || 0 }" %></p>
+  
+  <p><%= @post.text %></p>
+</div>
+  <br/>
+<div class="row border border-1 mt-2" >
+    <% @post.comments.each do |comment| %>
+      <p><%= "#{comment.author.name}: #{comment.text}" %></p>
+    <% end %>
+  </div>
+ </main>
+
+    <%= link_to ('back home'),users_path,class:"d-flex align-items-center justify-content-center m-3" %> 

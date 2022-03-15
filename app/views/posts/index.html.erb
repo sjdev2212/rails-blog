@@ -1,2 +1,36 @@
-<h1>Show all posts</h1>
-<p>User ID: <%= @user_id %></p>
+
+<main class=" row border border-1 mt-2">
+<div class="col ms-1" >
+ <%= image_tag (@user.photo), height: 200 ,width: 150 %>
+</div>
+<div class="col mt-3" >
+ <h2><%=@user.name%></h2>
+ <h3>Number of posts: <%= @user.posts_counter%></h3>
+</div>
+</main>
+
+
+
+    
+    <%@posts.each do |post|%>
+    <div class=" row border border-1 mt-2">
+    <p>Post#  <%=post.id%> 
+     <%= link_to post.title,"/users/#{@user.id}/posts/#{post.id}"%>
+   
+    <p><%=post.text%></p>
+
+    <div>Comments: <%= post.comments.size %>, Likes: <%= post.likes.size %></div>
+  </div>
+  
+            <% post.recent_comments.each do |comment| %>
+            <div class=" row border border-1 mt-2">
+              <p><%= "#{comment.author.name}: #{comment.text}" %></p>
+            </div>
+            <% end %>
+          
+
+<%end%>
+
+
+<%= link_to ('back home'),users_path,class:"d-flex align-items-center justify-content-center m-3"%> 
+
