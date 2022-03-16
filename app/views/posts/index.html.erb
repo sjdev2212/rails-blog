@@ -15,7 +15,7 @@
     <%@posts.each do |post|%>
     <div class=" row border border-1 mt-2">
     <p>Post#  <%=post.id%> 
-     <%= link_to post.title,"/users/#{@user.id}/posts/#{post.id}"%>
+     <%= link_to post.title,"/users/#{@user.id}/posts/#{post.id}",class:"badge badge-light"%>
    
     <p><%=post.text%></p>
 
@@ -32,5 +32,5 @@
 <%end%>
 
 
-<%= link_to ('back home'),users_path,class:"d-flex align-items-center justify-content-center m-3"%> 
+<%= link_to ('back home'),users_path,class:"d-flex align-items-center justify-content-center m-3 badge badge-light"%> 
 
