@@ -1,4 +1,5 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+![screenshot](./app/assets/images/photo.png)
 
 # ROR: Rails-blog
 
@@ -62,17 +63,11 @@ To setup the Items Library project in your local, in the repo page:
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/sj1978/rails-blog/issues).
+This project is [MIT](./MIT.md) licensed.
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.

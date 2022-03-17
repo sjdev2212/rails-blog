@@ -11,5 +11,11 @@
       <%= f.text_area :text, class: "form-control" %>
     </div>
     <%= f.submit "Publish",class:"btn btn-light mt-3"%>
+            <% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
   </div>
+<% end %>
+  </div>
+
 <% end %>

@@ -21,6 +21,11 @@
   
   <%= button_to 'Like this post',user_post_likes_path(@user_id, @post_id), method: :post,class:"btn btn-light mt-3"%>
  </div>
+ <% flash.each do |type, msg| %>
+  <div class="alert alert-danger">
+    <%= msg %>
+  </div>
+<% end %>
     
   
     <%= link_to ('back home'),users_path,class:"d-flex align-items-center justify-content-center m-3 text-white" %> 
