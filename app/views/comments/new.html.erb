@@ -1,0 +1,11 @@
+<h1> Add a comment</h1>
+<%= form_with model: @comment, url: user_post_comments_path do|f|%>
+  
+
+     <div class="form-group">
+      <%= f.label :text, "Text" %>
+      <%= f.text_area :text,required: true, class: "form-control" %>
+    </div>
+    <%= f.submit "Add comment",class:"btn btn-light mt-3"%>
+  </div>
+<% end %>
