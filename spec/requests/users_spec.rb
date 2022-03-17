@@ -7,12 +7,5 @@ RSpec.describe 'Users', type: :request do
       expect(response).to have_http_status(:ok)
       expect(response.body).to render_template(:index)
     end
-
-    it 'renders the user page' do
-      get '/users/10'
-      expect(response).to have_http_status(:ok)
-      expect(response.body).to render_template(:show)
-      expect(response.body).to include('User ID: 10')
-    end
   end
 end

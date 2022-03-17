@@ -11,10 +11,16 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params.merge(author_id: @current_user.id, post_id: @post_id))
     if comment.valid?
       comment.save
-      redirect_to user_post_path(@user_id, @post_id)
+      flash[:notice] = 'Comment created'
+
     else
-      redirect_to new_user_post_comment_path(@current_user.id)
+      flash[:notice] = 'Could not create comment'
+
+      # redirect_to user_post_path(@user_id, @post_id)
+      # redirect_to new_user_post_comment_path(@current_user.id)
+
     end
+    redirect_to user_post_path(@user_id, @post_id)
   end
 
   private

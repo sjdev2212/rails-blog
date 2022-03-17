@@ -20,10 +20,11 @@ class PostsController < ApplicationController
     post = Post.new(post_params.merge(author_id: @current_user.id, comments_counter: 0, likes_counter: 0))
     if post.valid?
       post.save
-      redirect_to user_path(@current_user.id)
+      flash[:notice] = 'Post created'
     else
-      redirect_to new_user_post_path(@current_user.id)
+      flash[:notice] = 'Could not create post'
     end
+    redirect_to user_path(@current_user.id)
   end
 
   def post_params

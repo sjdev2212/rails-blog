@@ -13,6 +13,11 @@
 
 
 </div>
+     <% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
 </main>
 <div class="border border-1">
         <h2>Bio</h2>
