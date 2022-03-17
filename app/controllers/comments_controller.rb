@@ -16,9 +16,6 @@ class CommentsController < ApplicationController
     else
       flash[:notice] = 'Could not create comment'
 
-      # redirect_to user_post_path(@user_id, @post_id)
-      # redirect_to new_user_post_comment_path(@current_user.id)
-
     end
     redirect_to user_post_path(@user_id, @post_id)
   end
