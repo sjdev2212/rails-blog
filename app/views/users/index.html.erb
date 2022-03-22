@@ -6,7 +6,9 @@
 <% @users.each do |user| %> 
 <div class="row border border-1">
 <div class="col ">
-<div class="mb-1 ms-3 "><%=  image_tag (user.photo),height: 200 ,width: 150 %></div>
+
+
+<%= image_tag (user.photo) unless user.photo.nil? %>
 </div>
 <div class="col">
      <%= link_to (user.name),user_path(user.id), class:"fs-2 badge badge-light"%>

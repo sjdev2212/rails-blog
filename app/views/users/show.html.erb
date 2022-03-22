@@ -1,7 +1,7 @@
 
 <main class=" row border border-1 mt-2">
     <div class="col  " >
-    <%= image_tag (@show_user.photo), height: 200 ,width: 150 %>
+ <%= image_tag (@show_user.photo) unless @show_user.photo.nil? %>
 </div>
 <div class="col mt-3" >
  <h2><%=@show_user.name%></h2>
