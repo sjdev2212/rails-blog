@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :show] do
+  devise_for :users do
     resources :posts, only: [:index, :show, :new, :create] do
       resources :comments, only: [:new, :create]
       resources :likes, only: [:create]
@@ -8,10 +8,8 @@ Rails.application.routes.draw do
   
   
 
-  root "users#index"
+  root "users\#index"
 
-  # Defines the root path route ("/")
 
-  # root "articles#index"
 
 end
