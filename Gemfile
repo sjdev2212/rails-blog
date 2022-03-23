@@ -33,6 +33,9 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Devise
 gem 'devise'
 
+#cancancan
+gem 'cancancan'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

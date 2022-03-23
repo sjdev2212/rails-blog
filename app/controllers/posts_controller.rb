@@ -3,11 +3,12 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
+    @post_id = params[:id]
   end
 
   def show
-    @user_id = params[:user_id]
-    @post_id = params[:id]
+    @user = User.find(params[:id])
+  
     @post = Post.find(params[:id])
   end
 
@@ -28,6 +29,17 @@ class PostsController < ApplicationController
     redirect_to user_path(@current_user.id)
   end
 
+  def destroy
+    @user = User.find(params[:author_id])
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:success] = 'Post item was successfully removed.'
+    else
+      flash[:error] = 'Try again.'
+    end
+    redirect_to "/users/#{@user.id}/posts"
+  end
+private
   def post_params
     params.require(:post).permit(:title, :text)
   end

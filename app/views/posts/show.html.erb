@@ -9,23 +9,30 @@
 <div class="row border border-1 mt-2" >
     <% @post.comments.each do |comment| %>
       <p><%= "#{comment.author.name}: #{comment.text}" %></p>
+ 
     <% end %>
+        <div>
+     
+ 
+
+  </div>
   </div>
    
    
   
  </main>
  <div class="d-flex justify-content-around">
-  <%= link_to 'Create a post' ,new_user_post_path(@user_id, @post_id),class:"btn btn-light mt-3"%>
-  <%= link_to 'Add a comment',new_user_post_comment_path(@user_id, @post_id),class:"btn btn-light mt-3"%>
+ 
+  <%= link_to 'Add a comment',new_user_post_comment_path(@user.id, @post.id),class:"btn btn-light mt-3"%>
   
-  <%= button_to 'Like this post',user_post_likes_path(@user_id, @post_id), method: :post,class:"btn btn-light mt-3"%>
+  <%= button_to 'Like this post',user_post_likes_path(@user.id, @post.id), method: :post,class:"btn btn-light mt-3"%>
  </div>
  <% flash.each do |type, msg| %>
   <div class="alert alert-danger">
     <%= msg %>
   </div>
+
 <% end %>
-    
+ 
   
     <%= link_to ('back home'),users_path,class:"d-flex align-items-center justify-content-center m-3 text-white" %> 
