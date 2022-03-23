@@ -9,11 +9,9 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :author_id
   has_many :posts, foreign_key: :author_id
 
-  
-  ROLES = %i[admin user].freeze
-
+  ROLES = [ :admin, :user ]
   def is?(requested_role)
-    role == requested_role.to_s
+    self.role == requested_role.to_s
   end
 
   def recent_posts
