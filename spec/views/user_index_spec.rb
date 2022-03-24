@@ -1,38 +1,43 @@
-# require 'rails_helper'
+ require 'rails_helper'
 
-# RSpec.describe 'User index page', type: :system do
-#   before do
-#     User.create(id: 1, name: 'Qwerty', email: 'qwerty@qwerty.com',
-#                 photo: 'https://randomuser.me/api/portraits/men/75.jpg',
-#                 password: 'qweqwe123', posts_counter: 0)
+ RSpec.describe 'User index page', type: :system do
+   before do
+   first_user = User.create(id: 1, name: 'name', email: 'name@name.com',
+        photo: 'https://images.pexels.com/photos/6171563/pexels-photo-6171563.jpeg  width = "300" height = "300"',
+        password: 'password', posts_counter: 2)
+#  Post.create(author: first_user, title: 'Hello', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat')
+#  Post.create(author: first_user, title: 'Hi', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat')
+    
 
-#     User.create(id: 2, name: 'Ytrewq', email: 'ytrewq@ytrewq.com',
-#                 photo: 'https://randomuser.me/api/portraits/men/55.jpg',
-#                 password: 'ewqewq321', posts_counter: 1)
-#   end
+      User.create(id: 2, name: 'amel', email: 'amel@amel.com',
+                  photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+                password: '123456', posts_counter: 6)
+  end
 
-#   describe 'Visiting the users index page' do
-#     before :each do
-#       visit '/users'
-#     end
+  describe 'Visiting the users index page' do
+    before :each do
+      visit '/users'
+    end
 
-#     it 'should display the username of all users' do
-#       expect(page).to have_text('Qwerty')
-#       expect(page).to have_text('Ytrewq')
-#     end
+     it 'should display the username of all users' do
+       expect(page).to have_text('name')
+       expect(page).to have_text('amel')
+     end
 
-#     it 'should display the profile picture of all users' do
-#       expect(page).to have_css('img')
-#     end
+     it 'should display the profile picture of all users' do
+       expect(page).to have_css('img')
+     end
 
-#     it 'should display the number of posts of all users' do
-#       expect(page).to have_text('Number of posts: 0')
-#       expect(page).to have_text('Number of posts: 1')
-#     end
+     it 'should display the number of posts of all users' do
+       expect(page).to have_text('Number of posts: 2')
+      expect(page).to have_text('Number of posts: 6')
+     end
 
-#     it 'should redirect to users page when clicking a user' do
-#       click_link('Ytrewq')
-#       expect(page).to have_current_path('/users/2')
-#     end
-#   end
-# end
+     it 'should redirect to users page when clicking a user' do
+      click_link('name')    
+      expect(page).to have_current_path('/users/1')
+
+   
+   end
+   end
+ end

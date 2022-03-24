@@ -1,11 +1,11 @@
 
 <main class=" row border border-1 mt-2">
     <div class="col  " >
- <%= image_tag (@show_user.photo) unless @show_user.photo.nil? %>
+ <%= image_tag (@post.photo) unless @post.photo.nil? %>
 </div>
 <div class="col mt-3" >
- <h2><%=@show_user.name%></h2>
- <h3>Number of posts: <%= @show_user.posts_counter%></h3>
+ <h2><%=@post.name%></h2>
+ <h3>Number of posts: <%= @post.posts_counter%></h3>
 </div>
 
 
@@ -21,11 +21,11 @@
 </main>
 <div class="border border-1">
         <h2>Bio</h2>
-<p><%=@show_user.bio %></p>
+<p><%=@post.bio %></p>
 </div>
 
 
-<%@show_user.recent_posts.each do |post|%>
+<%@post.recent_posts.each do |post|%>
 <div class="border border-1">
 <p><%=post.title%></p>
 <p><%=post.text%></p>
@@ -34,7 +34,7 @@
 <%end%>
 <div class="col-md-12 text-center mt-2" >
 <button class="btn btn-light mt-3" > 
-<%= link_to ('see all posts'),user_posts_path(@show_user.id ),class:"btn" %>
+<%= link_to ('see all posts'),user_posts_path(@post.id ),class:"btn" %>
  </button>
  </div> 
  <br/>
