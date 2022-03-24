@@ -18,14 +18,9 @@
     
 <% if can? :destroy, post %> <%= button_to "Delete", user_post_path(post.author_id, post.id), method: :delete %> <%end%> 
 
-
-
-
-    <p>Post#  <%=post.id%> 
+ <p>Post#  <%=post.id%> 
      <%= link_to post.title,"/users/#{@user.id}/posts/#{post.id}",class:"badge badge-light"%>
-
-   
-    <p><%=post.text%></p>
+<p><%=post.text%></p>
 
     <div>Comments: <%= post.comments.size %>, Likes: <%= post.likes.size %></div>
   </div>
