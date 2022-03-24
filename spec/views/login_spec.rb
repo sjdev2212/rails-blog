@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Login page', type: :system do
+RSpec.describe 'Login page', type: :feature do
   before do
     User.create(id: 1, name: 'name', email: 'name@name.com',
                 photo: 'https://images.pexels.com/photos/6171563/pexels-photo-6171563.jpeg ',

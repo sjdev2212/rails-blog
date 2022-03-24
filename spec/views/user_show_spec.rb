@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User show page', type: :system do
+RSpec.describe 'User show page', type: :feature do
   before do
     User.create(id: 1, name: 'name', email: 'name@name.com', bio: "Hello there! I'm Qwerty.",
                 photo: 'https://randomuser.me/api/portraits/men/75.jpg',
@@ -50,11 +50,6 @@ RSpec.describe 'User show page', type: :system do
     it 'should redirect to posts show page when clicking a user post' do
       click_link('Hello 1')
       expect(page).to have_current_path('/users/1/posts/1')
-    end
-
-    it 'should redirect to posts show page when clicking a user post' do
-      click_button('see all posts')
-      expect(page).to have_current_path('/users/1/posts')
     end
   end
 end
