@@ -27,6 +27,7 @@
 
 <%@post.recent_posts.each do |post|%>
 <div class="border border-1">
+   <%= link_to post.title,"/users/#{@post.id}/posts/#{post.id}",class:"badge badge-light"%>
 <p><%=post.title%></p>
 <p><%=post.text%></p>
  <p class="counter"><%= "Comments: #{post.comments_counter || 0}, Likes: #{post.likes_counter || 0 }" %></p>
