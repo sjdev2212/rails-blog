@@ -5,9 +5,7 @@
    first_user = User.create(id: 1, name: 'name', email: 'name@name.com',
         photo: 'https://images.pexels.com/photos/6171563/pexels-photo-6171563.jpeg  width = "300" height = "300"',
         password: 'password', posts_counter: 2)
-#  Post.create(author: first_user, title: 'Hello', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat')
-#  Post.create(author: first_user, title: 'Hi', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat')
-    
+
 
       User.create(id: 2, name: 'amel', email: 'amel@amel.com',
                   photo: 'https://randomuser.me/api/portraits/men/55.jpg',
