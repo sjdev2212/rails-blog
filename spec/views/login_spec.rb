@@ -30,4 +30,22 @@ RSpec.describe 'Login page', type: :system do
         click_button 'Log in'
         expect(page).to have_text('Invalid Email or password.')
       end
+      
+      
+    it 'Should display an error message if username or password are filled with wrong data' do
+        fill_in 'Email', with: 'name@name.com'
+        fill_in 'Password', with: 'aaaa'
+        click_button 'Log in'
+        expect(page).to have_text('Invalid Email or password.')
+      end
+
+      it 'Should log in successfully' do
+        fill_in 'Email', with: 'name@name.com'
+        fill_in 'Password', with: 'password'
+        click_button 'Log in'
+        expect(page).to have_content('Signed in successfully.')
+
+      end
+
+      end
     end
