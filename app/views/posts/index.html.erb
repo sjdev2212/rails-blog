@@ -1,4 +1,5 @@
 <main class=" row border border-1 mt-2">
+  <%= link_to 'Create a post' ,new_user_post_path(@user, @post),class:"btn btn-light mt-3"%>
 <div class="col ms-1" >
 <%= image_tag (@user.photo) unless @user.photo.nil? %>
 </div>
@@ -15,10 +16,8 @@
     <%@posts.each do |post|%>
     <div class=" row border border-1 mt-2">
     
+<% if can? :destroy, post %> <%= button_to "Delete", user_post_path(post.author_id, post.id), method: :delete %> <%end%> 
 
-    <% if can? :destroy, post %>
-    <%= button_to "Delete", user_post_path(post.author_id, post.id), method: :delete %>
-  <%end%>
 
 
 
@@ -37,6 +36,7 @@
             <% post.recent_comments.each do |comment| %>
             <div class=" row border border-1 mt-2">
               <p><%= "#{comment.author.name}: #{comment.text}" %></p>
+              <% if can? :destroy,comment%> <%= button_to "Delete", user_post_comment_path(@user.id,post.id,comment.id), method: :delete %> <%end%> 
             </div>
             <% end %>
           

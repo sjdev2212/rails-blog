@@ -20,17 +20,15 @@ class CommentsController < ApplicationController
     redirect_to user_post_path(@user_id, @post_id)
   end
 
-  def destroy
-    @post = Post.find_by_id(params[:post_id])
-    @user = User.find_by_id(params[:user_id])
-    @comment = @post.Comments.find(params[:comment_id])
-    if @comment.destroy
-      flash[:success] = 'Comment item was successfully removed.'
-    else
-      flash[:error] = 'Try again.'
-    end
-    redirect_to "/users/#{@user.id}/posts"
-  end
+
+  def destroy 
+    @current_user = current_user 
+    @user = User.find_by(id: params[:user_id]) 
+    @post = @user.posts.find_by(id: params[:post_id])
+    @comment = @post.comments.find(params[:id]) 
+    @comment.destroy 
+    redirect_to user_posts_path(@user.id), success: 'Comment was successfully deleted' 
+  end 
 
   private
 
