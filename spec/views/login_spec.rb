@@ -19,4 +19,15 @@ RSpec.describe 'Login page', type: :system do
      it 'should have password input field' do
        expect(page).to have_text('Password')
      end
+      
+      
+     it 'should have a log in button' do
+        expect(page).to have_button('Log in')
+      end
+
+
+    it 'Should display an error message if user does not fill in the username or password' do
+        click_button 'Log in'
+        expect(page).to have_text('Invalid Email or password.')
+      end
     end
